@@ -3,6 +3,17 @@ PYTHONVER=python3.10
 PYTHONENV=$(PROJ_BASE)/venv
 VENVPYTHON=$(PYTHONENV)/bin/$(PYTHONVER)
 
+.PHONY: help
+help:
+	@echo "Please use 'make <target>' where <target> is one of"
+	@echo "  build       to build the project"
+	@echo "  develop     to install the project in development mode"
+	@echo "  bootstrap   to bootstrap the project"
+	@echo "  test        to run type checks and tests"
+	@echo "  format      to format the code"
+	@echo "  clean       to clean the project"
+	@echo "  docs        to build the documentation"
+
 .PHONY: build
 build: develop
 	@echo "Building wheel file..."
@@ -48,4 +59,12 @@ clean:
 	@rm -rf .pytest_cache
 	@rm -rf build
 	@rm -rf dist
+	@rm -rf docs/build
+	@rm -rf docs/source/savefig
+	@echo "Done."
+
+.PHONY: docs
+docs:
+	@echo "Building documentation..."
+	@cd docs && make html
 	@echo "Done."

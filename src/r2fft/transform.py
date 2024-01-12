@@ -1,8 +1,6 @@
 # Standard library imports
-from typing import List
-
-# Related third party imports
 import cmath
+from typing import List
 
 
 def dft(signal: List[complex]) -> List[complex]:

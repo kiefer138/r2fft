@@ -6,7 +6,7 @@ import pytest
 import numpy as np
 
 # Local application/library specific imports
-from final_project.transform import dft, fft # type: ignore
+from r2fft.transform import dft, fft  # type: ignore
 
 
 def test_dft() -> None:

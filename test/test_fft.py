@@ -6,7 +6,7 @@ import pytest
 import numpy as np
 
 # Local application/library specific imports
-from final_project.fft import Node, FFTComputationTree # type: ignore
+from r2fft.fft import Node, FFTComputationTree  # type: ignore
 
 
 def test_node_initialization():

@@ -3,6 +3,12 @@ PYTHONVER=python3.10
 PYTHONENV=$(PROJ_BASE)/venv
 VENVPYTHON=$(PYTHONENV)/bin/$(PYTHONVER)
 
+.PHONY: build
+build: develop
+	@echo "Building wheel file..."
+	@$(VENVPYTHON) setup.py bdist_wheel
+	@echo "Done."
+
 .PHONY: develop
 develop: bootstrap
 	@echo "Installing project in development mode..."
@@ -25,12 +31,21 @@ test:
 	@$(VENVPYTHON) -m pytest test/
 	@echo "Done."
 
+.PHONY: format
+format:
+	@echo "Running black formatter..."
+	@$(VENVPYTHON) -m black src/ test/ setup.py
+	@echo "Done."
+
 .PHONY: clean
 clean:
 	@echo "Cleaning project..."
 	@rm -rf $(PYTHONENV)
 	@rm -rf **/*.egg-info
+	@find . -type d -name __pycache__ -exec rm -rf {} +
 	@rm -rf src/final_project/__pycache__
 	@rm -rf .mypy_cache
 	@rm -rf .pytest_cache
+	@rm -rf build
+	@rm -rf dist
 	@echo "Done."

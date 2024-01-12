@@ -34,7 +34,7 @@ test:
 .PHONY: format
 format:
 	@echo "Running black formatter..."
-	@$(VENVPYTHON) -m black src/ test/ setup.py
+	@$(VENVPYTHON) -m black src/ test/ setup.py docs/source/conf.py
 	@echo "Done."
 
 .PHONY: clean

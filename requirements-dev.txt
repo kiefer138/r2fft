@@ -1,5 +1,7 @@
 black==23.12.1
+ipython==8.20.0
 mypy==1.8.0
+nbsphinx==0.9.3
 pytest==7.4.4
 sphinx==7.2.6
 wheel==0.42.0

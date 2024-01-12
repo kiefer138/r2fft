@@ -1,5 +1,5 @@
 Auto-generated Documentation
-===========================
+============================
 
-.. automodule:: mymodule
+.. automodule:: r2fft
    :members:

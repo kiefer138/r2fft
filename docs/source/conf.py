@@ -17,7 +17,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.mathjax",
     "sphinx.ext.imgmath",
-    "ipython",
+    "IPython.sphinxext.ipython_directive",
     "nbsphinx",
 ]
 

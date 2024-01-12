@@ -60,7 +60,7 @@ clean:
 	@rm -rf build
 	@rm -rf dist
 	@rm -rf docs/build
-	@rm -rf docs/source/savefig
+	@rm -rf docs/source/savefig/*
 	@echo "Done."
 
 .PHONY: docs

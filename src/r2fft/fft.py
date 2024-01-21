@@ -1,9 +1,7 @@
 # Standard library imports
-from typing import List, Optional
-
-# Related third party imports
 import cmath
 from math import ceil, log2
+from typing import List, Optional
 
 
 class Node:
@@ -81,7 +79,16 @@ class FFTComputationTree:
 
 if __name__ == "__main__":
     # Define some non-empty data
-    data: List[complex] = [4+7j, 9+9j, 9+4j, 3+0j, 8+9j, 6+7j, 4+2j, 9+9j]
+    data: List[complex] = [
+        4 + 7j,
+        9 + 9j,
+        9 + 4j,
+        3 + 0j,
+        8 + 9j,
+        6 + 7j,
+        4 + 2j,
+        9 + 9j,
+    ]
 
     # Initialize a FFTComputationTree with the data
     tree: FFTComputationTree = FFTComputationTree(data)

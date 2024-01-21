@@ -10,8 +10,8 @@ from scipy.optimize import curve_fit  # type: ignore
 from graphviz import Digraph  # type: ignore
 
 # Local application imports
-from final_project.fft import FFTComputationTree, Node # type: ignore
-from final_project.transform import dft, fft # type: ignore
+from r2fft.fft import FFTComputationTree, Node  # type: ignore
+from r2fft.transform import dft, fft  # type: ignore
 
 
 def plot_tree(node: Node, graph: Optional[Digraph] = None) -> Digraph:
@@ -142,7 +142,7 @@ def random_periodic_data(size: int) -> Tuple[List[float], List[float]]:
 
     for _ in range(1, np.random.randint(3, 8)):
         # Each sine wave has a frequency that is an integer multiple of the base frequency
-        base_freq = 1/size  # base frequency
+        base_freq = 1 / size  # base frequency
         freq_mult = np.random.randint(1, 10)  # frequency multiplier
         freq = base_freq * freq_mult
 
@@ -153,14 +153,15 @@ def random_periodic_data(size: int) -> Tuple[List[float], List[float]]:
     return t.tolist(), signal.tolist()
 
 
-def gaussian_peak(mu: float, sigma: float, num_points: int) -> Tuple[List[float], List[float]]:
-    x = np.linspace(mu - 3*sigma, mu + 3*sigma, num_points)
-    y = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp( - (x - mu)**2 / (2 * sigma**2))
+def gaussian_peak(
+    mu: float, sigma: float, num_points: int
+) -> Tuple[List[float], List[float]]:
+    x = np.linspace(mu - 3 * sigma, mu + 3 * sigma, num_points)
+    y = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((x - mu) ** 2) / (2 * sigma**2))
     return x.tolist(), y.tolist()
 
 
 if __name__ == "__main__":
-
     # Define the input size
     size = 2**11
 

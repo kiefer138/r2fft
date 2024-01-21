@@ -1,0 +1,26 @@
+# MyPy cache directory
+.mypy_cache/
+
+# Pytest cache directory
+.pytest_cache/
+
+# Python cache files
+**/__pycache__/
+
+# Build directory
+build/
+
+# Distribution directory
+dist/
+
+# Egg-info directories
+**/*.egg-info/
+
+# Virtual environment directory
+venv/
+
+# .DS_Store files
+.DS_Store
+
+# Coverage directory
+*.png

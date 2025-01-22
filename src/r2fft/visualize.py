@@ -1,7 +1,7 @@
 # Standard library imports
 import random
 import timeit
-from typing import Callable, List, Optional, Tuple
+from typing import Callable, Optional
 
 # Third party imports
 import matplotlib.pyplot as plt
@@ -46,7 +46,7 @@ def n2(n: np.ndarray, a: float) -> np.ndarray:
     return a * n**2
 
 
-def performance_test_fft(max_power: int = 11) -> Tuple[List[int], List[float]]:
+def performance_test_fft(max_power: int = 11) -> tuple[list[int], list[float]]:
     # List of input sizes to test
     input_sizes = [2**i for i in range(1, max_power)]
 
@@ -73,7 +73,7 @@ def performance_test_fft(max_power: int = 11) -> Tuple[List[int], List[float]]:
 
 def performance_test_transform_func(
     transform_func: Callable, max_power: int = 11
-) -> Tuple[List[int], List[float]]:
+) -> tuple[list[int], list[float]]:
     # List of input sizes to test
     input_sizes = [2**i for i in range(1, max_power)]
 
@@ -136,7 +136,7 @@ def performance_plot(filename, input_sizes, elapsed_times, fit_func):
     plt.close()
 
 
-def random_periodic_data(size: int) -> Tuple[List[float], List[float]]:
+def random_periodic_data(size: int) -> tuple[list[float], list[float]]:
     t = np.linspace(0, size, size)
     signal = np.zeros(size)
 
@@ -155,7 +155,7 @@ def random_periodic_data(size: int) -> Tuple[List[float], List[float]]:
 
 def gaussian_peak(
     mu: float, sigma: float, num_points: int
-) -> Tuple[List[float], List[float]]:
+) -> tuple[list[float], list[float]]:
     x = np.linspace(mu - 3 * sigma, mu + 3 * sigma, num_points)
     y = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((x - mu) ** 2) / (2 * sigma**2))
     return x.tolist(), y.tolist()
